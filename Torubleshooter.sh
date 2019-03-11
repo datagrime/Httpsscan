@@ -2,6 +2,7 @@
 
 checkdomain=ubuntu.com
 Purp='\033[0;35m'
+NC='\033[0m'
 
 #Check if local network is up
 if ping -q -c 1 -W 1 google.com >/dev/null; then
@@ -21,7 +22,7 @@ fi
 
 
 #Check and Display IP Tables 
-Echo "Display Ip Tables"
+echo -e "Display Ip Tables"
 
 iptables --list
 
