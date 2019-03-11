@@ -25,7 +25,6 @@ Echo "Display Ip Tables"
 
 iptables --list
 
-fi 
 
 
 
