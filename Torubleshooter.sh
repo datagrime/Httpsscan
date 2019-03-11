@@ -9,6 +9,12 @@ else
   echo -e "\033[1mThe network is down\033[0m"
 fi
 
+case "$(curl -s --max-time 2 -I http://google.com | sed 's/^[^ ]*  *\([0-9]\).*/\1/; 1q')" in
+  [23]) 
+  echo "\033[1mHTTP connectivity is up\033[0m";;
+  5) echo "033[1mThe web proxy won't let us through\033[0m";;
+  *) echo "033[1mThe network is down or very slow\033[0m";;
+fi 
 
 #Scan HTTPS on port 443 
 if nc -zw1 $checkdomain 443; then
