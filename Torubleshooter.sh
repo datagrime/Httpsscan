@@ -21,6 +21,7 @@ fi
 
 #Check and Display IP Tables 
 echo -e "\033[1mDisplay Ip Tables\033[0m"
+tput sgr0 #Reset text attributes to normal
 
 iptables --list
 
